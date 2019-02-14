@@ -79,7 +79,7 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  arr.sort((a,b) => a.price - b.price);
+  arr.sort((a, b) => a.price - b.price);
   return arr;
 };
 
@@ -130,7 +130,7 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  arr.sort((a,b) => (a.age - b.age));
+  arr.sort((a, b) => (a.age - b.age));
   arr.sort((a, b) => a.firstName < b.firstName ? -1 : 1);
   arr.sort((a, b) => a.lastName < b.lastName ? -1 : 1);
   return arr;
@@ -159,7 +159,9 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+  arr.sort((a, b) => days.indexOf(a.dayOfWeek) - days.indexOf(b.dayOfWeek));
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
