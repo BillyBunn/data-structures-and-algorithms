@@ -12,13 +12,6 @@ CHALLENGE 1
 Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, highest to smallest.
 ------------------------------------------------------------------------------------------------ */
 
-// const sortBackwards = (arr) => {
-//   arr.sort((a, b) => {
-//     return a < b;
-//   });
-//   return arr;
-// };
-
 const sortBackwards = (arr) => {
   arr.sort((a, b) => b - a);
   return arr;
@@ -59,9 +52,9 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  arr.sort((a, b) => {
-    return a.toUpperCase() < b.toUpperCase() ? -1 : 1;
-  });
+  arr.sort((a, b) => a.toUpperCase() > b.toUpperCase() ? 1 : -1);
+  // arr.sort((a, b) => a.toUpperCase() > b.toUpperCase()); // why doesn't this line pass the test instead of the above?
+  // Need to return three possible values: 0 if equal, 1, or -1. This only performs one comparison, so it doesn't pass the test. 
   return arr;
 };
 
