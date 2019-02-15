@@ -23,7 +23,6 @@ Write a function named isCapitalized that takes in a string. This function shoul
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
-
 const isCapitalized = (str) => str.match(/[A-Z][\w]*/g);
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,8 +32,12 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
-};
+  let outputArr = [];
+  arr.forEach(function (value) {
+    if (/^[A-J]|^[a-j]/.test(value.toUpperCase())) outputArr.push(value);
+  });
+  return outputArr;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
