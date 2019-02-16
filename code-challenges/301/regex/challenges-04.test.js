@@ -53,6 +53,7 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
+  // "Official" #4 solution: `/^[Oo]ct(ober)?$/`
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,6 +68,7 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 
 const noPunctuation = str => {
   // Solution code here...
+  // "Official" #5 solution: `/\w+\s/g`
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,6 +85,7 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 
 let hangman = (str) => {
   // Solution code here...
+  // "Official" #6 solution: `/[a|e|i|o|u]/g`
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,6 +102,7 @@ const seashells = 'She sells seashells by the seashore. The shells she sells are
 
 const findShells = (str) => {
   // Solution code here...
+  // "Official" #7 solution: `/\b([A-Za-z]*ells)\b/g`
 };
 
 /* ------------------------------------------------------------------------------------------------
