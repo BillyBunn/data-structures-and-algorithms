@@ -75,7 +75,7 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach((element) => result.push(element.split(' ').slice(2).join(' ')));
   return result;
 }
 
