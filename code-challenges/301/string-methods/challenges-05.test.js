@@ -74,9 +74,9 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  const regEx = /\b\d+ \S+ (.*)/;
-  const getName = (ingredient) => result.push(regEx.exec(ingredient)[1]);
-  recipe.ingredients.forEach(getName);
+  const regEx = /\b\d+ \S+ (.*)/; // entire match = whole ingredient. group 1 match = 3rd word and on
+  const getName = (ingredient) => result.push(regEx.exec(ingredient)[1]); // grabs group 1 match and pushes it to result array
+  recipe.ingredients.forEach(getName); // runs getName on each item in array
   return result;
 }
 
@@ -125,7 +125,7 @@ For example:
 
 const removeEvenValues = (arr) => {
   for (let i = 0; i < arr.length; i++) {
-    while (!(arr[i] % 2)) arr.splice(i, 1);
+    while (arr[i] % 2 === 0) arr.splice(i, 1);
   }
   return arr;
 };
