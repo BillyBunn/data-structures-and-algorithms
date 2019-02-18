@@ -31,7 +31,6 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => arr.split('');
 
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -146,9 +145,13 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  let sliceEnd = str.length - numberOfCharacters;
+  let result;
+  if (sliceEnd < 0) result = '';
+  if (sliceEnd > str.length) result = str;
+  if (0 < sliceEnd < str.length) result = str.slice(0, sliceEnd);
+  return result
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
