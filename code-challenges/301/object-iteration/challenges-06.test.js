@@ -117,8 +117,12 @@ Write a function named hasChildrenEntries that is similar to your hasChildrenVal
 The input and output of this function are the same as the input and output from challenge 4.
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
+const hasChildrenEntries = (arr, name) => {
+  let output = false;
+  arr.forEach((character) => {
+    if (name === character.name && Object.entries(character)[2][1].length > 0) output = true;
+  });
+  return output;
 }
 
 /* ------------------------------------------------------------------------------------------------
