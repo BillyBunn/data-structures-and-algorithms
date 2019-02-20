@@ -22,8 +22,10 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  // Solution code here...
-};
+  let squares = [];
+  arr.forEach((number => squares.push(Math.pow(2, number))))
+  return squares;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
