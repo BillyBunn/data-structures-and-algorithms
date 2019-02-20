@@ -29,7 +29,7 @@ const forEachTwoToThe = (arr) => {
   arr.forEach((number => squares.push(Math.pow(2, number))));
   return squares;
 }
-// forEachTwoToThe([1, 2, 3]); //?
+// forEachTwoToThe([3, 8, 9]); //?
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -53,9 +53,10 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
+  let charCodes = arr.map(letter => letter.charCodeAt());
+  return charCodes;
 };
-
+// charCode(['h','i']); //?
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
