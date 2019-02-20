@@ -116,9 +116,10 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  let abilityNames = arr.map(abilityObj => abilityObj.ability.name);
+  return abilityNames;
 };
-
+// extractAbilities(snorlaxAbilities.abilities); //?
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
 
