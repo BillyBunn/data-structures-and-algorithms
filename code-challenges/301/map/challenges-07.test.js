@@ -11,10 +11,13 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-  let squares = arr.map(number => Math.pow(2, number));
+  let squares = [];
+  for (let i = 0; i < arr.length; i++) {
+    squares.push(Math.pow(2, arr[i]));
+  }
   return squares;
 };
-
+// forLoopTwoToThe([1, 2, 3]); //?
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -23,9 +26,10 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   let squares = [];
-  arr.forEach((number => squares.push(Math.pow(2, number))))
+  arr.forEach((number => squares.push(Math.pow(2, number))));
   return squares;
 }
+// forEachTwoToThe([1, 2, 3]); //?
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -34,9 +38,10 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+  let squares = arr.map(number => Math.pow(2, number));
+  return squares;
 }
-
+// mapTwoToThe([1, 2, 3]); //?
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
