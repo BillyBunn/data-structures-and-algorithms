@@ -22,7 +22,6 @@ The callback function to filter should include or utilize a regular expression p
 For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 'hound'].
 ------------------------------------------------------------------------------------------------ */
 
-
 const filterStringsWithVowels = (arr) => {
   return arr.filter((word) => word.match(/[aeiou]/));
 };
@@ -91,8 +90,11 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  const stats = arr.filter((stat) => stat.baseStat > minBaseStat);
+  return stats.map((stat) => stat.stat.name);
 };
+
+getStatName(snorlaxData.stats, 50);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
