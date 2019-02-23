@@ -136,9 +136,11 @@ const characters = [
   },
 ];
 
-const countNumberOfChildren = (arr) => {
-  // Solution code here...
-};
+const countNumberOfChildren = (arr) => arr.reduce((count, character) => {
+  let children = character.children ? character.children.length : 0;
+  count += children;
+  return count;
+}, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
