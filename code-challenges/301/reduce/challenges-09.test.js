@@ -223,8 +223,6 @@ const extractStat = (statName, arr) => arr.reduce((acc, currentStat) => {
   return acc;
 }, {});
 
-extractStat('speed', snorlaxData.stats); //?
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
@@ -236,7 +234,11 @@ Write a function named extractChildren that, given the array of characters from 
 ------------------------------------------------------------------------------------------------ */
 
 const extractChildren = (arr) => {
-  // Solution code here...
+  let aCharacters = arr.filter((character) => /A|a/.test(character.name));
+  return aCharacters.reduce((childrenNames, currentCharacter) => {
+    if (currentCharacter.children) currentCharacter.children.forEach((child) => childrenNames.push(child));
+    return childrenNames;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
