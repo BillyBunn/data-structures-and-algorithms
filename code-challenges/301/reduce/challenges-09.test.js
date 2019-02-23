@@ -70,9 +70,10 @@ let starWarsData = [{
   gender: 'female'
 }]
 
-const returnNames = (arr) => {
-  // Solution code here...
-};
+const returnNames = (arr) => arr.reduce((accumulator, value) => {
+  accumulator.push(value.name);
+  return accumulator;
+}, []);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
