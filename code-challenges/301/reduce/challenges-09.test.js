@@ -83,11 +83,9 @@ Write a function named reversedString that takes in a string and returns a strin
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
 
-const reversedString = (arr) => {
-  // console.log(`index: ${index} accumulator:${accumulator}`);
-
-  // Solution code here...
-};
+const reversedString = (str) => str.split('').reduce((acc, letter) => {
+  return letter + acc;
+}, '');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
