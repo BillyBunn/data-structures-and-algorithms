@@ -174,9 +174,10 @@ const isPrime = (value) => {
   return value > 1;
 };
 
-const countPrimeNumbers = (arr) => {
-  // Solution code here...
-}
+const countPrimeNumbers = (arr) => arr.reduce((primeCount, currentNumber) => {
+  if (isPrime(currentNumber)) primeCount++
+  return primeCount;
+}, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
