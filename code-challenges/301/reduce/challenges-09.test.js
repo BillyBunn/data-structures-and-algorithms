@@ -8,9 +8,10 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => {
-  // Solution code here...
-};
+const countNumberOfElements = (arr) => arr.reduce((accumulator) => {
+  accumulator++;
+  return accumulator;
+}, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -82,6 +83,8 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (arr) => {
+  // console.log(`index: ${index} accumulator:${accumulator}`);
+
   // Solution code here...
 };
 
