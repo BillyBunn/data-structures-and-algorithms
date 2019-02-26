@@ -1,3 +1,11 @@
+// ({
+//   babel: true
+// })
+
+// var abc = 123;
+
+// abc;
+
 
 'use strict';
 
@@ -14,11 +22,10 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 const count = (target, input) => {
   const temp = [];
   input.reduce((newArray, array) => {
-    array.reduce((acc, number) => {
+    array.reduce((count, number) => {
       temp.push(number);
-      ++acc;
+      ++count;
     }, 1)
-    return newArray;
   }, []);
 
   return temp.reduce((acc, number) => {
@@ -61,20 +68,22 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  return (
+    input.map(array => array.reduce((acc, val) => {
+      if (typeof val === 'number' && !(val % 5)) acc.push(Math.pow(2, val));
+      return acc;
+    }, []))
+  );
 };
-
-divisibleByFiveTwoToThePower([[10, 20, 5, 4], [5, 6, 7, 9], [1, 10, 3]]); //?
-// [[1024, 1048576, 32], [32], [1024]]
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
-
+ 
 Write a function named findMaleAndFemale that, given the Star Wars data, below,
 returns the names of the characters whose gender is either male or female.
-
+ 
 The names should be combined into a single string with each character name separated by "and".
-
+ 
 For example, "C-3PO and Luke Skywalker".
 ------------------------------------------------------------------------------------------------ */
 
@@ -135,7 +144,7 @@ let findMaleAndFemale = (data) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
-
+ 
 Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the shortest character.
 ------------------------------------------------------------------------------------------------ */
 
@@ -145,13 +154,13 @@ let findShortest = (data) => {
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
+ 
 All the code below will verify that your functions are working to solve the challenges.
-
+ 
 DO NOT CHANGE any of the below code.
-
+ 
 Run your tests from the console: jest challenges-10.test.js
-
+ 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
