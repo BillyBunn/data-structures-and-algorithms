@@ -27,8 +27,54 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  // Solution code here...
+  const regex = /^\w+(\.\w+)?@\w+(\.com|\.net|\.org)$/;
+  return regex.test(email);
 };
+validateEmail('joe@codefellows.com'); //?
+validateEmail('joe.schmoe@codefellows.net'); //?
+validateEmail('joe@codefellows.org'); //?
+validateEmail('joe.schmoe@codefellows.net') //?
+
+// should all be falsy
+validateEmail('justastring'); //?
+validateEmail('missing@adomain'); //?
+validateEmail('@noname.com'); //?
+validateEmail('.@noname.com'); //?
+validateEmail('nolastname.@sadness.net'); //?
+validateEmail('canadaisnotreal@canada.ca'); //?
+validateEmail('missing.atsymbol.net'); //?
+validateEmail('looksgood@sofar.comohnowaitthisisbad'); //?
+validateEmail('no.middle.names@foryou.com'); //?
+/*
+test('It should match a basic email', () => {
+    expect(validateEmail('joe@codefellows.com')).toBeTruthy();
+  });
+
+  test('It should match if the email contains a period', () => {
+    expect(validateEmail('joe.schmoe@codefellows.net')).toBeTruthy();
+  });
+
+  test('It should match if the email contains other top-level domains', () => {
+    expect(validateEmail('joe@codefellows.org')).toBeTruthy();
+  });
+
+  test('It should match if the email contains a period and other top-level domains', () => {
+    expect(validateEmail('joe.schmoe@codefellows.net')).toBeTruthy();
+  });
+
+  test('It should fail things that aren\'t email addresses', () => {
+    expect(validateEmail('justastring')).toBeFalsy();
+    expect(validateEmail('missing@adomain')).toBeFalsy();
+    expect(validateEmail('@noname.com')).toBeFalsy();
+    expect(validateEmail('.@noname.com')).toBeFalsy();
+    expect(validateEmail('nolastname.@sadness.net')).toBeFalsy();
+    expect(validateEmail('canadaisnotreal@canada.ca')).toBeFalsy();
+    expect(validateEmail('missing.atsymbol.net')).toBeFalsy();
+    expect(validateEmail('looksgood@sofar.comohnowaitthisisbad')).toBeFalsy();
+    expect(validateEmail('no.middle.names@foryou.com')).toBeFalsy();
+  })
+*/
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -52,7 +98,8 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+  const regex = /^{0,1}[0-9]$/;
+  regex.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
