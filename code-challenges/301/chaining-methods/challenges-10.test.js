@@ -12,14 +12,19 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  let numOfTarget = 0;
-  input.forEach((arr) => {
-    numOfTarget += arr.reduce((accumulator, number) => {
-      if (number === target) accumulator++;
-      return accumulator;
-    }, 0);
-  });
-  return numOfTarget;
+  const temp = [];
+  input.reduce((newArray, array) => {
+    array.reduce((acc, number) => {
+      temp.push(number);
+      ++acc;
+    }, 1)
+    return newArray;
+  }, []);
+
+  return temp.reduce((acc, number) => {
+    if (number === target) acc++;
+    return acc;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -58,6 +63,9 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
 };
+
+divisibleByFiveTwoToThePower([[10, 20, 5, 4], [5, 6, 7, 9], [1, 10, 3]]); //?
+// [[1024, 1048576, 32], [32], [1024]]
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
