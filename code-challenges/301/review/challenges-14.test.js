@@ -10,8 +10,6 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => arr.map((str) => str.charAt(0).toUpperCase() + str.substring(1));
 
-toTitleCase(['apple', 'banana', 'MacGyver']); //?
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -84,7 +82,11 @@ let starWarsData = [{
 }]
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  let result = arr.reduce((accumulator, character) => {
+    if (parseInt(character.mass) > 77) accumulator += character.name + ' - '
+    return accumulator;
+  }, '')
+  return result.substring(0, result.length - 3);
 }
 
 /* ------------------------------------------------------------------------------------------------
