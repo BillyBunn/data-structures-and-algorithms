@@ -110,7 +110,8 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  const multiplyArr = (arr) => arr.reduce((product, number) => { return product *= number }, 1)
+  return numbers.reduce((product, arr) => { return product *= multiplyArr(arr) }, 1)
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -130,8 +131,18 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  const averageArr = (arr) => arr.reduce((aveObj, number, idx) => {
+    aveObj.sum += number;
+    aveObj.average = aveObj.sum / (idx+1);
+    return aveObj;
+  }, { sum: 0, average: 0}).average 
+
+  // averageArr([66, 64, 58, 65, 71, 57, 60]); //?
+
+  return averageArr(weather.map(arr => averageArr(arr)))
 }
+
+averageDailyTemperature(weeklyTemperatures); //?
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
