@@ -162,12 +162,17 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  const averageArr = (arr) => arr.reduce((aveObj, number, idx) => {
-    aveObj.sum += number;
-    aveObj.average = aveObj.sum / (idx + 1);
-    return aveObj;
-  }, { sum: 0, average: 0 }).average
-  return averageArr(weather.map(arr => averageArr(arr)))
+  // Original solution: 
+  // const averageArr = (arr) => arr.reduce((aveObj, number, idx) => {
+  //   aveObj.sum += number;
+  //   aveObj.average = aveObj.sum / (idx + 1);
+  //   return aveObj;
+  // }, { sum: 0, average: 0 }).average
+  // return averageArr(weather.map(arr => averageArr(arr)))
+
+  const allDays = [].concat(...weather)
+  return allDays.reduce((acc, val) => acc + val) / allDays.length
+
 }
 
 /* ------------------------------------------------------------------------------------------------
