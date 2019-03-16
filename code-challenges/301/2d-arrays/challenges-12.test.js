@@ -172,7 +172,6 @@ const averageDailyTemperature = (weather) => {
 
   const allDays = [].concat(...weather)
   return allDays.reduce((acc, val) => acc + val) / allDays.length
-
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -204,7 +203,6 @@ const lowestWeeklyAverage = (weather) => {
 
   const weeklyAvgs = weather.map(week => week.reduce((acc, val) => acc + val) / week.length);
   return Math.min(...weeklyAvgs);
-
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -220,7 +218,8 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
+  const rows = str.split('\n').map(row => row.split(','))
+  return rows.map(row => row.reduce((sum, num) => parseInt(sum) + parseInt(num)));
 }
 
 /* ------------------------------------------------------------------------------------------------
