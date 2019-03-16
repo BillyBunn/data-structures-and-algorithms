@@ -30,51 +30,6 @@ const validateEmail = (email) => {
   const regex = /^\w+(\.\w+)?@\w+(\.com|\.net|\.org)$/;
   return regex.test(email);
 };
-validateEmail('joe@codefellows.com'); //?
-validateEmail('joe.schmoe@codefellows.net'); //?
-validateEmail('joe@codefellows.org'); //?
-validateEmail('joe.schmoe@codefellows.net') //?
-
-// should all be falsy
-validateEmail('justastring'); //?
-validateEmail('missing@adomain'); //?
-validateEmail('@noname.com'); //?
-validateEmail('.@noname.com'); //?
-validateEmail('nolastname.@sadness.net'); //?
-validateEmail('canadaisnotreal@canada.ca'); //?
-validateEmail('missing.atsymbol.net'); //?
-validateEmail('looksgood@sofar.comohnowaitthisisbad'); //?
-validateEmail('no.middle.names@foryou.com'); //?
-/*
-test('It should match a basic email', () => {
-    expect(validateEmail('joe@codefellows.com')).toBeTruthy();
-  });
-
-  test('It should match if the email contains a period', () => {
-    expect(validateEmail('joe.schmoe@codefellows.net')).toBeTruthy();
-  });
-
-  test('It should match if the email contains other top-level domains', () => {
-    expect(validateEmail('joe@codefellows.org')).toBeTruthy();
-  });
-
-  test('It should match if the email contains a period and other top-level domains', () => {
-    expect(validateEmail('joe.schmoe@codefellows.net')).toBeTruthy();
-  });
-
-  test('It should fail things that aren\'t email addresses', () => {
-    expect(validateEmail('justastring')).toBeFalsy();
-    expect(validateEmail('missing@adomain')).toBeFalsy();
-    expect(validateEmail('@noname.com')).toBeFalsy();
-    expect(validateEmail('.@noname.com')).toBeFalsy();
-    expect(validateEmail('nolastname.@sadness.net')).toBeFalsy();
-    expect(validateEmail('canadaisnotreal@canada.ca')).toBeFalsy();
-    expect(validateEmail('missing.atsymbol.net')).toBeFalsy();
-    expect(validateEmail('looksgood@sofar.comohnowaitthisisbad')).toBeFalsy();
-    expect(validateEmail('no.middle.names@foryou.com')).toBeFalsy();
-  })
-*/
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -98,8 +53,9 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  const regex = /^{0,1}[0-9]$/;
-  regex.test(phoneNumber);
+  // solution with Andrew's help
+  const regex = /^(\(\d{3}\)\s?|\d{3}( |-)?)\d{3}( |-)?\d{4}$/ig;
+  return regex.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,7 +68,11 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 ------------------------------------------------------------------------------------------------ */
 
 const findTagNames = elements => {
-  // Solution code here...
+  const regex = /\/\w+/g;
+  return elements.reduce((output, element) => {
+    element.match(regex).forEach(closingTag => output.push(closingTag))
+    return output;
+  },[]);
 }
 
 /* ------------------------------------------------------------------------------------------------
