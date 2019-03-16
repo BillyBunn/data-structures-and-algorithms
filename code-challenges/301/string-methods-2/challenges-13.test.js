@@ -53,7 +53,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  return arr.every(str => str.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ Write a function named findAnything that takes in an array of strings, along wit
 ------------------------------------------------------------------------------------------------ */
 
 const findAnything = (arr, target) => {
-  // Solution code here...
+  return arr.filter((str) => str.includes(target));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -73,7 +73,7 @@ Write a function named findEvery that takes in an array of strings, along with a
 ------------------------------------------------------------------------------------------------ */
 
 const findEvery = (arr, target) => {
-  // Solution code here...
+  return arr.every((str) => str.includes(target));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -89,7 +89,10 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 ------------------------------------------------------------------------------------------------ */
 
 const unenrollBrook = (arr) => {
-  // Solution code here...
+  return arr.map((courseRoster) => courseRoster.reduce((newRoster, student) => {
+    if (!student.includes('Brook')) newRoster.push(student);
+    return newRoster;
+  }, []))
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,7 +119,11 @@ For example, ['Tuesday', 'Monday', 'Wednesday and Thursday', 'Tuesday 2', 'Thurs
 const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 const sortByDay = (arr) => {
-  // Solution code here...
+  return daysOfWeek.map((day) => {
+    return arr.filter((event) => {
+      return event.includes(day);
+    })
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -128,7 +135,7 @@ For example, ['abcd', 'efgh', 'ijkl', 'mnop'] returns ['a', 'f', 'k', 'p']
 ------------------------------------------------------------------------------------------------ */
 
 const characterByIndex = (arr) => {
-  // Solution code here...
+  return arr.map((str, idx) => str.charAt(idx))
 };
 
 /* ------------------------------------------------------------------------------------------------
