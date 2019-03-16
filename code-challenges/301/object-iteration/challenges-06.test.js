@@ -137,7 +137,9 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 
 const houseSize = (arr) => {
   const sizes = [];
-  // Solution code here...
+  for (let character of arr) {
+    sizes.push({ 'house': character.house, 'members': 1 + character.children.length + (character.spouse ? 1 : 0) })
+  }
   return sizes;
 }
 
@@ -161,19 +163,24 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
   const survivors = [];
-  // Solution code here...
+  for (let character of arr) {
+    survivors.push({
+      'house': character.house,
+      'members': 1 + character.children.length + (character.spouse ? deceasedSpouses.includes(character.spouse) ? 0 : 1 : 0)
+    });
+  }
   return survivors;
 }
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
+ 
 All the code below will verify that your functions are working to solve the challenges.
-
+ 
 DO NOT CHANGE any of the below code.
-
+ 
 Run your tests from the console: jest challenges-06.test.js
-
+ 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
