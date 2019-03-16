@@ -34,8 +34,6 @@ const grandTotal = (stores) => {
   return results;
 }
 
-grandTotal(cookieStores); //?
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -54,8 +52,6 @@ const salesData = (hours, data) => {
   })
   return results;
 };
-
-salesData(hoursOpen, grandTotal(cookieStores)); //?
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -101,7 +97,8 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  if (board[row][col] === '#') return 'hit';
+  if (board[row][col] === ' ') return 'miss';
 }
 
 /* ------------------------------------------------------------------------------------------------
