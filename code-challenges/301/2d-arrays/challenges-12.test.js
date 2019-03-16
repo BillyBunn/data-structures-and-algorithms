@@ -34,6 +34,8 @@ const grandTotal = (stores) => {
   return results;
 }
 
+grandTotal(cookieStores); //?
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -45,8 +47,15 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  const results = [];
+  data.forEach((grandTotal, idx) => {
+    let saleData = { sales: `${grandTotal} cookies`, time: `${hours[idx]}` };
+    results.push(saleData);
+  })
+  return results;
 };
+
+salesData(hoursOpen, grandTotal(cookieStores)); //?
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
