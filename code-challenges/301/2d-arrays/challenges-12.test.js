@@ -109,9 +109,40 @@ Write a function named calculateProduct that takes in a two-dimensional array of
 For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
-const calculateProduct = (numbers) => {
-  const multiplyArr = (arr) => arr.reduce((product, number) => { return product *= number }, 1)
-  return numbers.reduce((product, arr) => { return product *= multiplyArr(arr) }, 1)
+function calculateProduct(numbers) {
+  // Original solution:
+  // const multiplyArr = (arr) => arr.reduce((product, number) => { return product *= number }, 1)
+  // return multiplyArr(numbers.map((row) => multiplyArr(row)))
+
+  // Alt solution:
+  // return numbers.reduce((product, row) => {
+  //   return product *= row.reduce((rowProduct, num) => { return rowProduct *= num }, 1);
+  // }, 1)
+
+  // And FINALLY, a one-liner using .concat() and ES6 spread syntax! Super cool.
+  return [].concat(...numbers).reduce((product, number) => { return product *= number }, 1);
+
+  /* 
+  Learned this after seeing a StackOverflow solution for sums here: 
+    https://stackoverflow.com/questions/42753362/sum-javascript-multidimensional-array-recursively
+
+  Was very excited to use the spread operator for the first time with this. 
+  Here's a summary of what I learned:
+  - .concat() merges multiple arrays together, simple enough. 
+  - The spread operator "allows an iterable to expand in places where 0+ arguments are expected."
+  - So the calculateProduct function expects a 2-d array as a parameter (named "numbers" above).
+  - By concatenating "...numbers" to an empty array, I've essentially taken each "row" in the 2-d input array, and made them into a single "row", one big array.
+  - From there, I'm just using the reduce method to calculate the product of that big row.
+  - I'm think this sort of solution is great for summing/multiplying/averaging an entire 2-d array, but I realize this will not work for all other calculations or searches in a 2-d array. 
+  It works well here because we're "doing the same thing" to every single item in the 2-d array.
+
+  - MDN docs for .concat(): 
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+  - MDN docs for spread syntax (specifically, the "Spread in array literals" section): 
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax#Spread_in_array_literals
+  - Helpful codeburst article on spread syntax: 
+    https://codeburst.io/javascript-es6-the-spread-syntax-f5c35525f754
+  */
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -133,16 +164,11 @@ const weeklyTemperatures = [
 const averageDailyTemperature = (weather) => {
   const averageArr = (arr) => arr.reduce((aveObj, number, idx) => {
     aveObj.sum += number;
-    aveObj.average = aveObj.sum / (idx+1);
+    aveObj.average = aveObj.sum / (idx + 1);
     return aveObj;
-  }, { sum: 0, average: 0}).average 
-
-  // averageArr([66, 64, 58, 65, 71, 57, 60]); //?
-
+  }, { sum: 0, average: 0 }).average
   return averageArr(weather.map(arr => averageArr(arr)))
 }
-
-averageDailyTemperature(weeklyTemperatures); //?
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
