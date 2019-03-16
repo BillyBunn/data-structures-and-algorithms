@@ -89,7 +89,10 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 ------------------------------------------------------------------------------------------------ */
 
 const unenrollBrook = (arr) => {
-  // Solution code here...
+  return arr.map((courseRoster) => courseRoster.reduce((newRoster, student) => {
+    if (!student.includes('Brook')) newRoster.push(student);
+    return newRoster;
+  }, []))
 };
 
 /* ------------------------------------------------------------------------------------------------
