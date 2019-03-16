@@ -188,8 +188,17 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  const avgTemps = (temps) => temps.reduce((avg, temp, idx) => {
+    avg.sum += temp;
+    avg.avg = avg.sum / (idx + 1);
+    return avg;
+  }, { sum: 0, avg: 0 }).avg
+
+return Math.min(...weather.map(week => avgTemps(week))) //?
 }
+
+lowestWeeklyAverage(lowestWeeklyTemperatureData); //?
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8
