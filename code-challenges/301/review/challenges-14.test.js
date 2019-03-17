@@ -110,12 +110,6 @@ const sortBy = (property, arr) => {
   })
 };
 
-sortBy('name', [
-  { name: 'Sweatshirt', price: 45 },
-  { name: 'Bookmark', price: 2.50 },
-  { name: 'Tote bag', price: 15 }
-]); //?
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -129,7 +123,7 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  // Solution code here...
+  return /^https:\/\/(.*)/.test(url);
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -152,8 +146,44 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+
+  // takes an array of 3 values, returns true/false if they match/don't match
+  const threeInARow = (arrOfThree) => arrOfThree.includes('') ? false : (arrOfThree[0] === arrOfThree[1] && arrOfThree[0] === arrOfThree[2]) ? true : false;
+  // searches through a 2-d array for "true"
+  const findWins = (twoDArray) => twoDArray.map(arr => threeInARow(arr)).includes(true);
+
+  // create 3 columns arrays
+  const columns = board.reduce((acc, row) => {
+    acc[0].push(row[0])
+    acc[1].push(row[1])
+    acc[2].push(row[2])
+    return acc;
+  }, [[], [], []])
+
+  // create 2 diagonals arrays
+  const diagonals = board.reduce((acc, row, idx) => {
+    acc[0].push(row[idx])
+    acc[1].push(row[2 - idx]);
+    return acc;
+  }, [[], []])
+
+  return findWins(board.concat(columns, diagonals)) ? true : false; //?
 }
+
+// wins
+detectTicTacToeWin([['X', '', 'O'], ['X', 'O', ''], ['X', 'O', 'X']]); //?
+detectTicTacToeWin([['O', '', 'X'], ['X', 'O', 'X'], ['X', '', 'O']]); //?
+detectTicTacToeWin([['X', 'X', 'X'], ['X', 'O', 'X'], ['O', '', 'O']]); //?
+
+
+// no wins  
+detectTicTacToeWin([['X', '', 'O'], ['O', 'O', ''], ['X', 'O', 'X']]); //?
+
+
+// no wins, 3 empty
+detectTicTacToeWin([['', '', ''], ['O', 'O', ''], ['X', 'O', 'X']]); //?
+
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
