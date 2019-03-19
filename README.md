@@ -1,5 +1,10 @@
 # Data Structures and Algorithms
 
+## Table of Contents
+### Code Challenges
+* [arrayReverse](code-challenges/arrayReverse/)
+
+
 ## Overview
 ### 301
 Contains code challenges assigned daily during Code 301 course at Code Fellows in Seattle.
