@@ -7,4 +7,5 @@
 Once you’ve achieved a working solution, implement the same feature with a different methodology. (Hint: what different techniques do you have when working with arrays? Recursion, loops, indexes, modifying the array input directly…)
 
 ## Whiteboard
-![arrayReverse whiteboard image](https://raw.githubusercontent.com/BillyBunn/data-structures-and-algorithms/array_reverse/assets/array_reverse.jpg)
+![arrayShift whiteboard image 1](../../../assets/array_shift_1.jpg)
+![arrayShift whiteboard image 2](../../../assets/array_shift_2.jpg)
