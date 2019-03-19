@@ -3,3 +3,4 @@
 ## Table of Contents
 ### Code Challenges
 * [arrayReverse](code-challenges/arrayReverse/)
+* [arrayShift](code-challenges/arrayShift/)
