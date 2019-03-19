@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --verbose",
-    "watch": "jest --watchAll --coverage --verbose"
+    "start": "node index.js",
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jest": "^24.5.0"
+    "jest": "^24.5.0",
+    "eslint": "^5.15.3"
   }
 }
