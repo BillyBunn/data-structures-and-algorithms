@@ -37,4 +37,6 @@ The Big O time for this approach is…
 ## Solution
 <!-- Embedded whiteboard image -->
 ### Whiteboard
+Whiteboard portion of this challenge was done in collaboration with Spencer Hirata, Jon Gentry, and Aaron Bruce.
+
 ![arrayBinarySearch whiteboard image 1](../../../assets/array_binary_search.jpg)
