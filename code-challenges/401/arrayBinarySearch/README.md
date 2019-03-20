@@ -23,6 +23,9 @@
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+The approach I took to solve this was…
+The Big O space for this approach is…
+The Big O time for this approach is…
 
 ### Stretch Goal - **NOT COMPLETED**
 Once you’ve achieved a working solution, benchmark with varying array sizes (100, 10000, 100000 elements)
