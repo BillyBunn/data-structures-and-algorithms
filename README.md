@@ -4,3 +4,4 @@
 ### Code Challenges
 * [arrayReverse](code-challenges/arrayReverse/)
 * [arrayShift](code-challenges/arrayShift/)
+* [arrayBinarySearch](code-challenges/arrayBinarySearch/)
