@@ -2,9 +2,9 @@
 
 ## Table of Contents
 ### Code Challenges
-* [arrayReverse](code-challenges/arrayReverse/)
-* [arrayShift](code-challenges/arrayShift/)
-* [arrayBinarySearch](code-challenges/arrayBinarySearch/)
+* [arrayReverse](code-challenges/401/arrayReverse/)
+* [arrayShift](code-challenges/401/arrayShift/)
+* [arrayBinarySearch](code-challenges/401/arrayBinarySearch/)
 
 ### Data Structures
 * [linked-lists](linked-lists/)
