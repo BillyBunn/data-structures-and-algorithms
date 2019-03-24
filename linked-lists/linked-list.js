@@ -63,57 +63,18 @@ class LinkedList {
   }
 }
 
-let list = new LinkedList(); //?
-list.add('FIRST'); //?
-list.add('SECOND'); //?
-list.add('THIRD'); //?
-list.insert('ZERO'); //?
+module.exports = LinkedList;
+
+// let list = new LinkedList(); //?
+// list.add('FIRST'); //?
+// list.add('SECOND'); //?
+// list.add('THIRD'); //?
+// list.insert('ZERO'); //?
 
 
-console.log(list);
-// list.head.next.next; //?
-list.includes('THIRD'); //?
-list.print(); //?
+// console.log(list);
+// // list.head.next.next; //?
+// list.includes('THIRD'); //?
+// list.print(); //?
 
-list;
-
-
-
-
-// Add method - puts a node at the end
-
-
-
-// Insert method - to the beginning
-// takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
-
-
-// Includes method
-
-// Print method
-
-
-
-/*
-Features
-
-Define a method called print which takes in no arguments and returns a collection all of the current Node values in the Linked List.
-
-At no time should an exception or stack trace be shown to the end user. Catch and handle any such exceptions and return a printed value or operation which cleanly represents the state and either stops execution cleanly, or provides the user with clear direction and output.
-Be sure to follow your language/frameworks standard naming conventions (e.g. C# uses PascalCasing for all method and class names).
-
-Structure and Testing
-Utilize the Single-responsibility principle: any methods you write should be clean, reusable, abstract component parts to the whole challenge. You will be given feedback and marked down if you attempt to define a large, complex algorithm in one function definition.
-
-Write tests to prove the following functionality:
-
-Can successfully instantiate an empty linked list
-Can properly insert into the linked list
-The head property will properly point to the first node in the linked list
-Can properly insert multiple nodes into the linked list
-Will return true when finding a value within the linked list that exists
-Will return false when searching for a value in the linked list that does not exist
-Can properly return a collection of all the values that exist in the linked list
-
-Ensure your tests are passing before you submit your solution.
-*/
+// list;
