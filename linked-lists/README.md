@@ -1,4 +1,8 @@
 # Singly Linked List
+* [Submission PR](https://github.com/BillyBunn/data-structures-and-algorithms/pull/24)
+* [Travis CI build](https://travis-ci.com/BillyBunn/data-structures-and-algorithms/builds/105565575)
+
+## Summary
 Creates classes for a linked-list and nodes in the list. Uses ES6 class syntax. 
 
 As a singly linked-list, each node has a reference to the next node in the list.
