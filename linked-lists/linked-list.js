@@ -11,30 +11,30 @@ class Node {
 // Linked list class
 class LinkedList {
   constructor() {
-    this.head = null;
+    this.head = null; // when list is empty, the head is null
   }
   // method to add a node at the head of the list
   insert(value) {
     let node = new Node(value);
-    node.next = this.head;
-    this.head = node;
-    return this.head;
+    node.next = this.head; // make the current head the second node
+    this.head = node; // make the new node the the first node (the head)
+    return this.head; // return the new list
   }
   // method to add a node at the end of the list
   add(value) {
-    let node = new Node(value);
+    let node = new Node(value); // creae a new node with whatever value
 
-    if (this.head === null) {
+    if (this.head === null) { // if the list is empty
       this.head = node;
       return this.head;
     }
 
-    let current = this.head;
-    while (current.next !== null) {
+    let current = this.head; // starting with the first node
+    while (current.next !== null) { // while we're not on the last node, loop through the list
       current = current.next;
-    }
-    current.next = node;
-    return this.head;
+    } // stops when we're on the last node in the list
+    current.next = node; // add the new node to the end of the list
+    return this.head; // return the new list
   }
 }
 
