@@ -17,8 +17,6 @@ for (let i = 0; i < values.length; i++) {
 values.reverse(); // reverses the values (so it's in the same order as the list)
 
 
-// console.log('values', values);
-
 describe('linked lists', () => {
   it('Can successfully instantiate an empty linked list', () => {
     expect(new LinkedList()).toBeTruthy();
@@ -60,5 +58,57 @@ describe('linked lists', () => {
   it('Can properly return a collection of all the values that exist in the linked list', () => {
     expect(list.print()).toEqual(values);
   });
+});
+
+describe('linked list insertions', () => {
+  it('Can successfully add a node to the end of the linked list', () => {
+    let newValue = faker.random.word();
+    list.append(newValue);
+    // let lastNode;
+    let current = list.head;
+    while (current.next) current = current.next;
+    expect(current.value).toEqual(newValue);
+  });
+
+  it('Can successfully add multiple nodes to the end of a linked list', () => {
+    let moreValues = [];
+    for (let i = 0; i < 11; i++) {
+      moreValues.push(faker.random.word());
+    }
+    for (let i = 0; i < moreValues.length; i++) {
+      list.append(moreValues[i]);
+    }
+    values.concat(moreValues);
+    let current = list.head;
+    for (let i = 0; i < values.length; i++) {
+      expect(current.value).toBe(values[i]);
+      current = current.next;
+    }
+  });
+
+  // it('Can successfully insert a node before a node located i the middle of a linked list', () => {
+
+  // });
+
+  // it('Can successfully insert a node before the first node of a linked list', () => {
+
+  // });
+
+  // it('Can successfully insert after a node in the middle of the linked list', () => {
+
+  // });
+
+  // it('Can successfully insert a node after the last node of the linked list', () => {
+
+  // });
 
 });
+
+/*
+Can successfully add a node to the end of the linked list
+Can successfully add multiple nodes to the end of a linked list
+Can successfully insert a node before a node located i the middle of a linked list
+Can successfully insert a node before the first node of a linked list
+Can successfully insert after a node in the middle of the linked list
+Can successfully insert a node after the last node of the linked list
+*/

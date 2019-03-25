@@ -23,7 +23,7 @@ class LinkedList {
   }
 
   // method to add a node at the end of the list
-  add(value) {
+  append(value) {
     let node = new Node(value); // creae a new node with whatever value
 
     if (!this.head) { // if the list is empty
@@ -65,10 +65,10 @@ class LinkedList {
 
 module.exports = LinkedList;
 
-// let list = new LinkedList(); //?
-// list.add('FIRST'); //?
-// list.add('SECOND'); //?
-// list.add('THIRD'); //?
+let list = new LinkedList(); //?
+list.append('FIRST'); //?
+// list.append('SECOND'); //?
+// list.append('THIRD'); //?
 // list.insert('ZERO'); //?
 
 
