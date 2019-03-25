@@ -39,7 +39,6 @@ describe('linked lists', () => {
     // let reversedValues = values.reverse();
     let current = list.head;
     for (let i = 0; i < values.length; i++) {
-      // console.log(current.value, values[i]);
       expect(current.value).toBe(values[i]); // checks every value inserted in the linked list against the values array (reversed)
       current = current.next;
     }
@@ -86,13 +85,24 @@ describe('linked list insertions', () => {
     }
   });
 
-  // it('Can successfully insert a node before a node located i the middle of a linked list', () => {
+  it('Can successfully insert a node before a node located in the middle of a linked list', () => {
+    let newValue = faker.random.word();
+    list.insertBefore(newValue, values[Math.floor(values.length / 2)]);
+    let current = list.head;
+    while (current.value !== newValue) current = current.next;
+    expect(current.value).toEqual(newValue);
+  });
 
-  // });
+  it('Can successfully insert a node before the first node of a linked list', () => {
+    let newValue = faker.random.word();
+    list.insertBefore(newValue, list.head.value);
+    expect(list.head.value).toEqual(newValue);
+  });
 
-  // it('Can successfully insert a node before the first node of a linked list', () => {
 
-  // });
+});
+
+
 
   // it('Can successfully insert after a node in the middle of the linked list', () => {
 
@@ -102,13 +112,5 @@ describe('linked list insertions', () => {
 
   // });
 
-});
+// });
 
-/*
-Can successfully add a node to the end of the linked list
-Can successfully add multiple nodes to the end of a linked list
-Can successfully insert a node before a node located i the middle of a linked list
-Can successfully insert a node before the first node of a linked list
-Can successfully insert after a node in the middle of the linked list
-Can successfully insert a node after the last node of the linked list
-*/

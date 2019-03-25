@@ -61,16 +61,69 @@ class LinkedList {
     }
     return values; // return the filled array of values
   }
+
+  insertBefore(value, target) {
+    let node = new Node(value);
+
+    if (!this.head) { // if the list is empty
+      this.head = node; // make the new node the head
+      return this.head; // return the new list
+    }
+
+    let current = this.head;
+    target;
+    current.next.value; //?
+    current.next.next.value; //?
+    while (current.next.value !== target && current.next) {
+      current.next.value; //?
+      current = current.next;
+    }
+    if (current.next) { // if we're not at the end of the list
+      node.next = current.next; // make our new node refer to the next node
+      current.next = node;
+    } else {
+      current.next = node;
+    }
+    return this.head;
+  }
+
+  insertAfter(value, target) {
+    let node = new Node(value);
+
+    if (!this.head) { // if the list is empty
+      this.head = node; // make the new node the head
+      return this.head; // return the new list
+    }
+
+    let current = this.head;
+    // stop loop if current node = target value
+    while (current.value !== target || current.next) {
+      current = current.next;
+    }
+    if (current.next) {
+      node.next = current.next;
+    }
+    // no 'else', as this will happen whether or not we're on the last node
+    current.next = node;
+    return this.head;
+  }
+
+
 }
+
+
 
 module.exports = LinkedList;
 
 let list = new LinkedList(); //?
 list.append('FIRST'); //?
-// list.append('SECOND'); //?
-// list.append('THIRD'); //?
+list.append('SECOND'); //?
+list.append('THIRD'); //?
 // list.insert('ZERO'); //?
+list.insertBefore('inserted', 'SECOND');
+list.head.next; //?
 
+list.insertBefore('ZFasdfasd', list.head.value); 
 
 // console.log(list);
 // // list.head.next.next; //?
