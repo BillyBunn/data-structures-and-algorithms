@@ -52,6 +52,16 @@ Challenge adds 3 methods to LinkedList class:
 ## Whiteboard
 ![Class 6 whiteboard](https://i.imgur.com/A1rN2CN.jpg)
 
+# Code Challenge: Class 07
+Completed with Shannon Tully.
+
+Challenge adds 1 method to LinkedList class:
+* `.kthFromEnd` - returns the node’s value that is k from the end of the linked list
+
+
+## Whiteboard
+![Class 7 whiteboard](https://i.imgur.com/b7ObvDJ.jpg)
+
 ## Resources
 The work done on this data structure was largely informed by a lecture at Code Fellows by John Cokos, the _Code 401: Advanced JavaScript_ instructor.
 
