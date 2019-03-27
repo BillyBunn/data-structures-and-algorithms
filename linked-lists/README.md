@@ -41,6 +41,17 @@ All other methods require looping through the list, so efficiency is dependent a
 <!-- ## API
 Description of each method publicly available to your Linked List -->
 
+# Code Challenge: Class 06
+Completed with Shannon Tully.
+
+Challenge adds 3 methods to LinkedList class:
+* `.append(value)` - adds node to end of list
+* `.insertBefore(value, target)` - adds node before a certain value
+* `.insertAfter(value, target)` - adds node after a certain value
+
+## Whiteboard
+![Class 6 whiteboard](https://i.imgur.com/A1rN2CN.jpg)
+
 ## Resources
 The work done on this data structure was largely informed by a lecture at Code Fellows by John Cokos, the _Code 401: Advanced JavaScript_ instructor.
 
