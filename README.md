@@ -5,6 +5,7 @@
 * [arrayReverse](code-challenges/401/arrayReverse/)
 * [arrayShift](code-challenges/401/arrayShift/)
 * [arrayBinarySearch](code-challenges/401/arrayBinarySearch/)
+* [llMerge](code-challenges/401/llMerge/)
 
 ### Data Structures
 * [linked-lists](linked-lists/)
