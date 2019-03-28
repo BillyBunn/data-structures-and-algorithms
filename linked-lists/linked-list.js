@@ -108,7 +108,27 @@ class LinkedList {
     return this.head;
   }
 
+  kFromEnd(k) {
+    if (typeof k != 'number' || k < 0 || !this.head) return 'Exception';
 
+    let frontRunner = this.head;
+    let backRunner = this.head;
+
+    try {
+      for (let i = 0; i <= k; i++) {
+        if (!frontRunner.next) return backRunner.value;
+        frontRunner = frontRunner.next;
+      }
+    }
+    catch (error) {
+      return 'Exception';
+    }
+    while (frontRunner.next) {
+      frontRunner = frontRunner.next;
+      backRunner = backRunner.next;
+    }
+    return backRunner.next.value;
+  }
 }
 
 
@@ -116,18 +136,25 @@ class LinkedList {
 module.exports = LinkedList;
 
 let list = new LinkedList(); //?
-list.append('FIRST'); //?
-list.append('SECOND'); //?
-list.append('THIRD'); //?
+list.append(1);
+list.append(2);
+list.append(3);
+list.append(4);
+list.append(5);
+list.append(6);
+list.append(7);
+list.append(8);
+list.append(9);
+list.append(10);
 // list.insert('ZERO'); //?
-list.insertBefore('inserted', 'SECOND');
-list.head.next; //?
+// list.insertBefore('inserted', 'SECOND');
+list.head; //?
+list.print(); //?
 
-list.insertBefore('ZFasdfasd', list.head.value); 
+list.kFromEnd(6); //?
+list.kFromEnd(3); //?
+list.kFromEnd(1); //?
+list.kFromEnd(0); //?
+list.kFromEnd(-1); //?
+list.kFromEnd(); //?
 
-// console.log(list);
-// // list.head.next.next; //?
-// list.includes('THIRD'); //?
-// list.print(); //?
-
-// list;
