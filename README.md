@@ -7,6 +7,7 @@
 * [arrayBinarySearch](code-challenges/401/arrayBinarySearch/)
 * [llMerge](code-challenges/401/llMerge/)
 * [queueWithStacks](code-challenges/queueWithStacks/)
+* [fifoAnimalShelter](code-challenges/401/fifoAnimalShelter)
 
 ### Data Structures
 * [linked-lists](linked-lists/)
