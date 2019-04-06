@@ -27,15 +27,15 @@ class BinaryTree {
     // returns an array of the values, ordered appropriately
 
   }
+}
 
+class BinarySearchTree extends BinaryTree {
   add(value) {
     // accepts a value, and adds a new node with that value in the correct location in the binary search tree
-
   }
 
   contains(value) {
     // accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once
-
   }
 }
 
