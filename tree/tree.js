@@ -69,109 +69,38 @@ class BinarySearchTree extends BinaryTree {
 
   // accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once
   contains(value, root = this.root) {
-    // depth-first recursive method
-    // if (!root) return false;
-    // if (root.value === value) return true;
-    // if (root.value > value) return this.contains(value, root.leftChild);
-    // if (root.value < value) return this.contains(value, root.rightChild);
+    if (value === undefined) return null;
+    /*
+    // recursive method
+    if (!root) return false;
+    if (root.value === value) return true;
+    if (root.value > value) return this.contains(value, root.leftChild);
+    if (root.value < value) return this.contains(value, root.rightChild);
+    */
 
-    // breadth-first queue method
-    let current = root;
-    while (current.value !== value) {
-      value < current.value ?
-        current = current.leftChild :
-        current = current.rightChild;
-      if (!current) return false;
+    // non-recursive method
+    while (root.value !== value) {
+      value < root.value ?
+        root = root.leftChild :
+        root = root.rightChild;
+      if (!root) return false;
     }
     return true;
   }
 
 }
 
-// let a = new Node('A');
-// let b = new Node('B');
-// let c = new Node('C');
-// let d = new Node('D');
-// let e = new Node('E');
-// let f = new Node('F');
-
-// let tree = new BinaryTree(a);
-
-// tree;
-
-// tree.root.leftChild = b;
-// tree.root.rightChild = c;
-// tree.root.leftChild.leftChild = d;
-// tree.root.leftChild.rightChild = e;
-// tree.root.rightChild.leftChild = f;
-
-// tree.preOrder(); //?
-// tree.inOrder(); //?
-// tree.postOrder(); //?
-
-
-
-// let a = new Node(100);
-// let b = new Node(50);
-// let c = new Node(200);
-// let d = new Node(25);
-// let e = new Node(75);
-// let f = new Node(150);
-
-// let g = new Node(300);
-// let h = new Node(60);
-// let i = new Node(90);
-// let j = new Node(342);
-
-
-
-// let binarySearchTree = new BinarySearchTree(a);
-// binarySearchTree.root.leftChild = b;
-// binarySearchTree.root.rightChild = c;
-// binarySearchTree.root.leftChild.leftChild = d;
-// binarySearchTree.root.leftChild.rightChild = e;
-// binarySearchTree.root.rightChild.leftChild = f;
-
-// binarySearchTree.add(300); //?
-
-
-
-
-// for (let i = 10; i <= 20; i += 10) {
-//   binarySearchTree.add(i);
-//   i;
-//   binarySearchTree.add(-i);
-//   -i; //?
-
-
-//   binarySearchTree.add(i - 5);
-//   i - 5; //?
-//   binarySearchTree.add(-i + 5);
-//   -i + 5; //?
-
-// }
-// binarySearchTree.preOrder(); //?
-
-// binarySearchTree.add(-1);
-
 let binarySearchTree = new BinarySearchTree(10);
 binarySearchTree.add(3);
 binarySearchTree.add(15);
-// binarySearchTree.add(50);
-
-
-binarySearchTree;
 
 binarySearchTree.inOrder(); //?
 binarySearchTree.preOrder(); //?
 
-binarySearchTree.root.value; //?
-// binarySearchTree.contains(0); //?
-
-
-binarySearchTree.contains(3); //?
+binarySearchTree.contains(10); //?
 binarySearchTree.contains(3); //?
 binarySearchTree.contains(15); //?
 
 binarySearchTree.contains(5); //?
 binarySearchTree.contains(50); //?
+binarySearchTree.contains(); //?
