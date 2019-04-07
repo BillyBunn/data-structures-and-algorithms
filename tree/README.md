@@ -25,7 +25,7 @@ My `BinaryTree` class constructs a new instance with a `value` passed in, and se
 
 
 The `preOrder`, `inOrder`, and `postOrder` methods on the class traverse the tree recursively and return an array of all the values in the tree.
-* The code for each of these methods follows the same basic pattern, but _when_ the "current" `node` is pushed is different for each case. 
+* The code for each of these methods follows the same basic pattern, but _when_ the "current" node's value is pushed is different for each case. 
 * I leveraged ES6's [default parameter values](http://es6-features.org/#DefaultParameterValues) to pass the returned array of values into the method. This allows it to accumulate at each recursive pass through the function.
 * The time and space efficiency for these recursive approaches is `O(n)`, as the call-stack adds up when the function is called within itself.
 
