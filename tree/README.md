@@ -1,7 +1,7 @@
 # Trees
 This code challenge explores **binary trees** and **binary search trees**. 
 
-I completed the challenge described below and explain my solutions in the Approach & Efficiency section.
+I completed the challenge described below and explain my solutions in the [Approach & Efficiency](#approach--efficiency) section.
 
 ## Challenge
 * Create a `Node` class that has properties for the value stored in the node, the left child node, and the right child node.
