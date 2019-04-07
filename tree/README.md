@@ -18,7 +18,7 @@ I completed the challenge described below and explain my solutions in the [Appro
 ### Node
 The `Node` class I created constructs instances with a `value` passed in. It has three properties: `value`, `leftChild`, and `rightChild`. 
 
-`value` is equal to whatever is passed in each constructed instance,`leftChild` and `rightChild` are equal to `null`.
+`value` is equal to whatever is passed in for each constructed instance,`leftChild` and `rightChild` are equal to `null`.
 
 ### BinaryTree
 My `BinaryTree` class constructs a new instance with a `value` passed in, and sets its `root` property equal to a new `Node` made with that `value`.
