@@ -17,7 +17,7 @@ As my partner (Jason Burns) and I visualized the problem domain, we knew we need
 
 We opted for a depth-first traversal of the tree to look at each node—though a breadth-first traversal would've worked as well, we thought pulling in the `Queue` class and methods was just one more step we didn't need (also, recursive functions are fun).
 
-We wrote a helper function called `traverseChange` within our algorithm 
+We wrote a helper function called `traverseChange` within our algorithm to do most of the work (the recursive traversal, the value-changing). Our main `fizzBuzzTree` function calls this helper with the root of whatever tree is passed in.
 
 For handling any thrown errors in the process, I used a try/catch to call our recursive helper function. I did this because there were a couple different errors I wanted to throw in the function _and_ the helper function within. (Note that the try/catch isn't on the whiteboard)
 
