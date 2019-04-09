@@ -53,3 +53,5 @@ fizzBuzzTree(tree).inOrder(); //?
 // fizzBuzzTree(); //? 
 // fizzBuzzTree(badTree); //?
 // fizzBuzzTree(badTree).inOrder(); //?
+
+module.exports = fizzBuzzTree;
