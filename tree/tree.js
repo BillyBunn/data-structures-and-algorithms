@@ -90,17 +90,40 @@ class BinarySearchTree extends BinaryTree {
 
 }
 
-let binarySearchTree = new BinarySearchTree(10);
+let binarySearchTree = new BinarySearchTree(5);
+binarySearchTree.root.value; //?
+let c = new Node('C');
+let b = new Node('B');
+
+// binarySearchTree.root.leftChild = b;
+// binarySearchTree.root.rightChild = c;
+// binarySearchTree.root.leftChild.value; //?
+// binarySearchTree.root.rightChild.value; //?
+
+
 binarySearchTree.add(3);
 binarySearchTree.add(15);
+binarySearchTree.add(-15);
 
-binarySearchTree.inOrder(); //?
+
 binarySearchTree.preOrder(); //?
+binarySearchTree.inOrder(); //?
+binarySearchTree.postOrder(); //?
 
 binarySearchTree.contains(10); //?
 binarySearchTree.contains(3); //?
 binarySearchTree.contains(15); //?
 
-binarySearchTree.contains(5); //?
-binarySearchTree.contains(50); //?
-binarySearchTree.contains(); //?
+// binarySearchTree.contains(5); //?
+// binarySearchTree.contains(50); //?
+// binarySearchTree.contains(); //?
+
+const tree = new BinarySearchTree(10);
+
+let a = new Node(1);
+let d = new Node(20);
+
+tree.root.leftChild = a;
+tree;
+
+module.exports = {Node, BinaryTree, BinarySearchTree};
