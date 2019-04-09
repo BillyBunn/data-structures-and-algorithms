@@ -11,6 +11,17 @@
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+### The Big O
+#### Time
+The time efficiency of this algorithm depends on the size of the input (the tree). 
+
+The time efficiency is therefore `O(n)`.
+
+#### Space
+Because our algorithim is a recursive solution, the callstack builds up as the tree is traveresed depth-first. The biggest the callstack will ever be depends on the depth (or height) of the tree. 
+
+The space efficiency is therefore `O(h)`, where `h` is the height of the tree.
 
 ## Solution
+_Completed in collaboration with Jason Burns_
 ![fizz buzz tree whiteboard](../../../assets/fizz-buzz-tree.jpg)
