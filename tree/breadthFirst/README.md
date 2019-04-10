@@ -8,7 +8,6 @@ breadthFirst(root = this.root) {
     while(queue.peek()) {
       if (queue.front.value.leftChild) queue.enqueue(queue.front.value.leftChild);
       if (queue.front.value.rightChild) queue.enqueue(queue.front.value.rightChild);
-      // queue.dequeue() returns front queue node, queue node value = tree node
       valueArray.push(queue.dequeue().value.value);
     }
     return valueArray;
