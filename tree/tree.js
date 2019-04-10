@@ -51,6 +51,10 @@ class BinaryTree {
 
     return values;
   }
+
+  breadthFirst(node = this.root) {
+    
+  }
 }
 
 class BinarySearchTree extends BinaryTree {
