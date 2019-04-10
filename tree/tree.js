@@ -1,5 +1,7 @@
 'use strict';
 
+const Queue = require('../stacksAndQueues/stacks-and-queues.js').Queue;
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -52,8 +54,17 @@ class BinaryTree {
     return values;
   }
 
-  breadthFirst(node = this.root) {
-    
+  breadthFirst(root = this.root) {
+    let queue = new Queue();
+    let valueArray = [];
+    queue.enqueue(root);
+    while(queue.peek()) {
+      if (queue.front.value.leftChild) queue.enqueue(queue.front.value.leftChild);
+      if (queue.front.value.rightChild) queue.enqueue(queue.front.value.rightChild);
+      // queue.dequeue() returns front queue node, queue node value = tree node
+      valueArray.push(queue.dequeue().value.value);
+    }
+    return valueArray;
   }
 }
 
@@ -94,40 +105,20 @@ class BinarySearchTree extends BinaryTree {
 
 }
 
-let binarySearchTree = new BinarySearchTree(5);
-binarySearchTree.root.value; //?
-let c = new Node('C');
-let b = new Node('B');
-
-// binarySearchTree.root.leftChild = b;
-// binarySearchTree.root.rightChild = c;
-// binarySearchTree.root.leftChild.value; //?
-// binarySearchTree.root.rightChild.value; //?
+let tree = new BinaryTree(1);
+tree.root.leftChild = new Node(2);
+tree.root.leftChild.leftChild = new Node(4);
+tree.root.leftChild.rightChild = new Node(5);
 
 
-binarySearchTree.add(3);
-binarySearchTree.add(15);
-binarySearchTree.add(-15);
+tree.root.rightChild = new Node(3);
+tree.root.rightChild.rightChild = new Node(6);
+tree.root.rightChild.rightChild.leftChild = new Node(7);
 
 
-binarySearchTree.preOrder(); //?
-binarySearchTree.inOrder(); //?
-binarySearchTree.postOrder(); //?
 
-binarySearchTree.contains(10); //?
-binarySearchTree.contains(3); //?
-binarySearchTree.contains(15); //?
+tree.breadthFirst(); //?
 
-// binarySearchTree.contains(5); //?
-// binarySearchTree.contains(50); //?
-// binarySearchTree.contains(); //?
-
-const tree = new BinarySearchTree(10);
-
-let a = new Node(1);
-let d = new Node(20);
-
-tree.root.leftChild = a;
-tree;
+tree.inOrder(); //?
 
 module.exports = {Node, BinaryTree, BinarySearchTree};
