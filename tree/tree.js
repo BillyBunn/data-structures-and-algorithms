@@ -58,7 +58,7 @@ class BinaryTree {
     let queue = new Queue();
     let valueArray = [];
     queue.enqueue(root);
-    while(queue.peek()) {
+    while (queue.peek()) {
       if (queue.front.value.leftChild) queue.enqueue(queue.front.value.leftChild);
       if (queue.front.value.rightChild) queue.enqueue(queue.front.value.rightChild);
       // queue.dequeue() returns front queue node, queue node value = tree node
@@ -66,6 +66,26 @@ class BinaryTree {
     }
     return valueArray;
   }
+
+  findMaximumValue(node = this.root, max = this.root.value) {
+
+    if (node.leftChild) {
+      node.leftChild.value > node.value ?
+        this.findMaximumValue(node.leftChild, node.leftChild.value) :
+        this.findMaximumValue(node.leftChild, max);
+    }
+
+
+    if (node.rightChild) {
+      node.rightChild.value > node.value ?
+        this.findMaximumValue(node.rightChild, node.rightChild.value) :
+        this.findMaximumValue(node.rightChild, max);
+    }
+
+    return max; //?
+
+  }
+
 }
 
 class BinarySearchTree extends BinaryTree {
@@ -115,10 +135,10 @@ tree.root.rightChild = new Node(3);
 tree.root.rightChild.rightChild = new Node(6);
 tree.root.rightChild.rightChild.leftChild = new Node(7);
 
-
+tree.findMaximumValue(); //?
 
 tree.breadthFirst(); //?
 
 tree.inOrder(); //?
 
-module.exports = {Node, BinaryTree, BinarySearchTree};
+module.exports = { Node, BinaryTree, BinarySearchTree };
