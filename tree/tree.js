@@ -1,5 +1,7 @@
 'use strict';
 
+const Queue = require('../stacksAndQueues/stacks-and-queues.js').Queue;
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -51,6 +53,39 @@ class BinaryTree {
 
     return values;
   }
+
+  breadthFirst(root = this.root) {
+    let queue = new Queue();
+    let valueArray = [];
+    queue.enqueue(root);
+    while (queue.peek()) {
+      if (queue.front.value.leftChild) queue.enqueue(queue.front.value.leftChild);
+      if (queue.front.value.rightChild) queue.enqueue(queue.front.value.rightChild);
+      // queue.dequeue() returns front queue node, queue node value = tree node
+      valueArray.push(queue.dequeue().value.value);
+    }
+    return valueArray;
+  }
+
+  findMaximumValue(node = this.root, max = this.root.value) {
+
+    if (node.leftChild) {
+      node.leftChild.value > node.value ?
+        this.findMaximumValue(node.leftChild, node.leftChild.value) :
+        this.findMaximumValue(node.leftChild, max);
+    }
+
+
+    if (node.rightChild) {
+      node.rightChild.value > node.value ?
+        this.findMaximumValue(node.rightChild, node.rightChild.value) :
+        this.findMaximumValue(node.rightChild, max);
+    }
+
+    return max; //?
+
+  }
+
 }
 
 class BinarySearchTree extends BinaryTree {
@@ -90,40 +125,20 @@ class BinarySearchTree extends BinaryTree {
 
 }
 
-let binarySearchTree = new BinarySearchTree(5);
-binarySearchTree.root.value; //?
-let c = new Node('C');
-let b = new Node('B');
-
-// binarySearchTree.root.leftChild = b;
-// binarySearchTree.root.rightChild = c;
-// binarySearchTree.root.leftChild.value; //?
-// binarySearchTree.root.rightChild.value; //?
+let tree = new BinaryTree(1);
+tree.root.leftChild = new Node(2);
+tree.root.leftChild.leftChild = new Node(4);
+tree.root.leftChild.rightChild = new Node(5);
 
 
-binarySearchTree.add(3);
-binarySearchTree.add(15);
-binarySearchTree.add(-15);
+tree.root.rightChild = new Node(3);
+tree.root.rightChild.rightChild = new Node(6);
+tree.root.rightChild.rightChild.leftChild = new Node(7);
 
+tree.findMaximumValue(); //?
 
-binarySearchTree.preOrder(); //?
-binarySearchTree.inOrder(); //?
-binarySearchTree.postOrder(); //?
+tree.breadthFirst(); //?
 
-binarySearchTree.contains(10); //?
-binarySearchTree.contains(3); //?
-binarySearchTree.contains(15); //?
+tree.inOrder(); //?
 
-// binarySearchTree.contains(5); //?
-// binarySearchTree.contains(50); //?
-// binarySearchTree.contains(); //?
-
-const tree = new BinarySearchTree(10);
-
-let a = new Node(1);
-let d = new Node(20);
-
-tree.root.leftChild = a;
-tree;
-
-module.exports = {Node, BinaryTree, BinarySearchTree};
+module.exports = { Node, BinaryTree, BinarySearchTree };
