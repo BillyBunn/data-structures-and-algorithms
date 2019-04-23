@@ -45,6 +45,11 @@ const merge = (left, right, arr) => {
 };
 
 // const nums = [5, 4, 3, 2, 1, 6, 9, 8, 7];
-const nums = [4,1,2,3];
+const nums = [9,7,8,3,2];
 
 mergeSort(nums); //?
+
+let lef = merge([9], [7], [9,7]); //?
+let rig = merge([8], [2,3], [8,3,2]); //?
+
+merge(lef, rig, nums); //?
