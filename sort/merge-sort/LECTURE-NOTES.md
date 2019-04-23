@@ -40,7 +40,7 @@ It's one of the most time-efficient sorting algorithms, with a time complexity o
   
 ## Diagram
 
-Include your "Visual" here
+![Merge Sort Visual](https://i.imgur.com/dilQQXO.jpg)
 
 ## Algorithm
 
