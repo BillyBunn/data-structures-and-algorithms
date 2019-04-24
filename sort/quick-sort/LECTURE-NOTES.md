@@ -39,7 +39,8 @@ Include small code snippets to possibly support the points
 
 **Watch**
 
-* [Video](http://link-to-amazing-video)
+* [Quicksort: Partitioning an array](https://www.youtube.com/watch?v=MZaf_9IZCrc)
+* [Quick sort in 4 minutes](https://www.youtube.com/watch?v=Hoixgm4-P4M)
 
 **Read**
 
