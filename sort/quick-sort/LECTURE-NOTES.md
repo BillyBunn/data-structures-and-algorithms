@@ -82,7 +82,7 @@ The space efficiency of Quick Sort is O(n).
 
 
 ## Algorithm
-#### [`quick-sort.js` JavaScript implementation]('./quick-sort.js')
+#### [`quick-sort.js` JavaScript implementation](quick-sort.js)
 * Run the code  in `quick-sort.js` to see useful console logs for an entire example.
 * Alternatively, use the VSCode debug tool to walk through the running code. Break points have already been set for you. 
 
