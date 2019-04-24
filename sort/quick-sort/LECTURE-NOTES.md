@@ -41,7 +41,7 @@ The space efficiency of Quick Sort is O(n).
   * When you shouldn't use Quick Sort (and should use a different algorithm)
   
 ## Diagram
-
+### Visual Walkthrough
 ![Imgur](https://i.imgur.com/KauMd56.jpg)
 * Given an array of numbers, we set rightmost value as the **pivot** (more on picking pivots later). This is the number we're trying to put in its proper place.
 * We set a **low** equal to one less than the first index, and begin looping through the array. 
@@ -80,6 +80,9 @@ The space efficiency of Quick Sort is O(n).
 * 4 is now in its proper place—all the values before 4 are less than it, and all the values after are greater.
 * To get the rest of the values in their proper places, we repeat the same operation for the values on the left and right of 4. 
 
+### Code Walkthrough
+![Imgur](https://i.imgur.com/bh2PmQ1.png)
+Run the [`quick-sort.js` JavaScript implementation](quick-sort.js) to see this print out live in a terminal. Consider using the VSCode debug tool to step through it (after setting some break points).
 
 ## Algorithm
 #### [`quick-sort.js` JavaScript implementation](quick-sort.js)
