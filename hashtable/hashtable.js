@@ -66,13 +66,26 @@ class Hashtable {
     this.map[hash].append(entry);
   }
 
+  // helper method to traverse bucket (LL) and return value of a key
+  searchBucket(bucket, key) {
+    let current = bucket.head;
+    while (current) {
+      if (Object.keys(current.value)[0] === key) {
+        return Object.values(current.value)[0];
+      } else {
+        current = current.next;
+      }
+    }
+    return null;
+  }
+
   get(key) {
     // hash the key
     let hash = this.hash(key);
 
-    // return value(s) of key from table
+    // if the bucket exists, return the value of the key
     // return null if not found
-    return this.map[hash] ? this.map[hash].values() : null;
+    return this.map[hash] ? this.searchBucket(this.map[hash], key) : null;
   }
 
   contains(key) {
@@ -103,7 +116,7 @@ ht.add('erin', 'aunt');
 ht.add('june', 'grandma');
 ht.add('mike', 'uncle');
 
-ht.get('banana'); //?
+ht.get('pete'); //?
 ht.contains('june'); //?
 
 ht.print();
