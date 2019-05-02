@@ -47,6 +47,8 @@ class Hashtable {
     // 2. Add (or multiply) all the UTF-16 values together
     // 3. Multiply by a large prime number (like 599)
     // 4. Divide by the total size of the array
+
+    if (typeof key !== 'string') key = key.toString();
     return key.split('').reduce((p, n) => {
       return p + n.charCodeAt(0);
     }, 0) * 599 % this.size;
@@ -68,6 +70,7 @@ class Hashtable {
 
   // helper method to traverse bucket (LL) and return value of a key
   searchBucket(bucket, key) {
+    if (typeof key !== 'string') key = key.toString();
     let current = bucket.head;
     while (current) {
       if (Object.keys(current.value)[0] === key) {
@@ -109,20 +112,20 @@ class Hashtable {
   }
 }
 
-let ht = new Hashtable(1024);
+// let ht = new Hashtable(1024);
 
-ht.add('billy', 'husband');
-ht.add('brooke', 'wife');
-ht.add('becky', 'sister');
-ht.add('teresa', 'mom');
-ht.add('jim', 'stepdad');
-ht.add('pete', 'uncle');
-ht.add('erin', 'aunt');
-ht.add('june', 'grandma');
-ht.add('mike', 'uncle');
+// ht.add('billy', 'husband');
+// ht.add('brooke', 'wife');
+// ht.add('becky', 'sister');
+// ht.add('teresa', 'mom');
+// ht.add('jim', 'stepdad');
+// ht.add('pete', 'uncle');
+// ht.add('erin', 'aunt');
+// ht.add('june', 'grandma');
+// ht.add('mike', 'uncle');
 
-ht.get('pete'); //?
-ht.contains('teresa'); //?
+// ht.get('pete'); //?
+// ht.contains('teresa'); //?
 
 // ht.print(); //?
 
