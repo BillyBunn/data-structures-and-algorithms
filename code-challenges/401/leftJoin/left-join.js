@@ -18,16 +18,5 @@ const leftJoinObjs = (objA, objB) => {
   }
   return output;
 };
-let objA = {
-  big: 'large',
-  hot: 'warm',
-  small: 'tiny',
-};
-let objB = {
-  big: 'small',
-  short: 'tall',
-  hot: 'cold',
-};
-leftJoinObjs(objA, objB); //?
 
 module.exports = {leftJoinMaps, leftJoinObjs};
