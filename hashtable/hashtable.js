@@ -39,7 +39,7 @@ class LinkedList {
 class Hashtable {
   constructor(size) {
     this.size = size;
-    this.map = new Array(size).fill(); // 
+    this.map = new Array(size);
   }
 
   hash(key) {
@@ -52,7 +52,7 @@ class Hashtable {
     }, 0) * 599 % this.size;
   }
 
-  add(key, value) {
+  add(key, value = key) {
     // hash the key
     let hash = this.hash(key);
 
@@ -85,15 +85,20 @@ class Hashtable {
 
     // if the bucket exists, return the value of the key
     // return null if not found
-    return this.map[hash] ? this.searchBucket(this.map[hash], key) : null;
+    return this.map[hash] ?
+      this.searchBucket(this.map[hash], key) :
+      null;
   }
 
   contains(key) {
     // hash the key
     let hash = this.hash(key);
 
+    // if the bucket exists and the key within that bucket exists
     // return boolean if in table
-    return this.map[hash] ? true : false;
+    return this.map[hash] && this.searchBucket(this.map[hash], key) ?
+      true :
+      false;
   }
 
   print() {
@@ -117,6 +122,8 @@ ht.add('june', 'grandma');
 ht.add('mike', 'uncle');
 
 ht.get('pete'); //?
-ht.contains('june'); //?
+ht.contains('teresa'); //?
 
-ht.print();
+// ht.print(); //?
+
+module.exports = Hashtable;
