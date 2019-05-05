@@ -1,4 +1,6 @@
 # Graphs
+[![Build Status](https://travis-ci.com/BillyBunn/data-structures-and-algorithms.svg?branch=graph)](https://travis-ci.com/BillyBunn/data-structures-and-algorithms)
+
 **[Wikipedia](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)):**
 > A Graph data structure consists of a finite (and possibly mutable) set of vertices or nodes or points, together with a set of unordered pairs of these vertices for an undirected Graph or a set of ordered pairs for a directed Graph. These pairs are known as edges, arcs, or lines for an undirected Graph and as arrows, directed edges, directed arcs, or directed lines for a directed Graph. The vertices may be part of the Graph structure, or may be external entities represented by integer indices or references
 
