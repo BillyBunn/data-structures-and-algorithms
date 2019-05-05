@@ -36,18 +36,11 @@ class Graph {
   }
 
   getVertices() {
-    // let vertices = [];
-    // let keys = this.adjacencyList.keys();
-    // for(let value of keys) {
-    //   vertices.push(value);
-    // }
-    // return vertices;
-
-    return this.adjacencyList.values();
+    return this._size ? [...this.adjacencyList.keys()] : null;
   }
 
   getNeighbors(vertex) {
-    return this.adjacencyList.get(vertex);
+    return [...this.adjacencyList.get(vertex)];
   }
 
   print() {
@@ -57,17 +50,4 @@ class Graph {
   }
 }
 
-const graph = new Graph();
-let a = graph.addVertex('Washington');
-let b = graph.addVertex('North Dakota');
-let c = graph.addVertex('California');
-
-graph.addUndirectedEdge(a, b, 10);
-graph.addUndirectedEdge(b, c, 100);
-graph.addUndirectedEdge(a, c, 9);
-
-// graph.print();
-
-graph.getVertices(); //?
-
-// graph.getNeighbors(b); //?
+module.exports = Graph;
