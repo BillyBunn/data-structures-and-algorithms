@@ -4,7 +4,7 @@
 **[Wikipedia](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)):**
 > A Graph data structure consists of a finite (and possibly mutable) set of vertices or nodes or points, together with a set of unordered pairs of these vertices for an undirected Graph or a set of ordered pairs for a directed Graph. These pairs are known as edges, arcs, or lines for an undirected Graph and as arrows, directed edges, directed arcs, or directed lines for a directed Graph. The vertices may be part of the Graph structure, or may be external entities represented by integer indices or references
 
-## Challenge
+## Challenge 1
 #### Implement your own Graph. 
 The graph should be represented as an adjacency list, and should include the following methods:
 1. `AddNode()`
@@ -35,17 +35,27 @@ The graph should be represented as an adjacency list, and should include the fol
 7. A graph with only one node and edge can be properly returned
 8. An empty graph properly returns `null`
 
-## Approach & Efficiency
+### Approach & Efficiency
 I used ES6 class syntax to create my own `Graph` class. To make my implementation concise and understandable, I also created a `Vertex` and `Edge` class that the `Graph`'s methods could use. 
 
 The most important property in my `Graph` class is its `adjacencyList`, which is a new instance of a [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map), another new feature of ES6. `Map` prototype methods are used in the methods of my `Graph` class. 
 
 The `Graph` class also has a `_size` property, which indicates the number of vertices in its `adjacencyList`.
 
-## API
+### API
 * `addVertex(value)`
 * `addDirectedEdge(startVertex, endVertex, weight)`
 * `addUndirectedEdge(startVertex, endVertex, weight)`
 * `getVertices()`
 * `getNeighbors(vertex)`
 * `print()`
+
+## Challenge 2
+#### Breadth-First Traversal of a Graph
+Extend your graph object with a breadth-first traversal method that accepts a starting node. Without utilizing any of the built-in methods available to your language, return a collection of nodes in the order they were visited. Display the collection.
+
+### Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+### Solution
+![Whiteboard](https://i.imgur.com/gHyKsq7.jpg)
