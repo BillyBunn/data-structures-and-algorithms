@@ -14,24 +14,22 @@ const getEdges = (graph, citiesArr) => {
 
   for (let i = 0; i < citiesArr.length - 1; i++) {
     try {
-      if (graph.has(citiesArr[i]) ) {
-        let current = graph.get(citiesArr[i]); //?
-        let neighbors = graph.getNeighbors(current); //?
-
-        for (let neighbor of neighbors) {
-          console.log(neighbor.weight);
-          console.log(neighbor.vertex.value);
-
-          if (neighbor.vertex.value === citiesArr[i + 1]) output.cost += neighbor.weight;
-        }
-      } else {
-        console.log('else');
-        throw {output: false, cost: 0};
+      let hasCurrent = graph.has(citiesArr[i]);
+      let current = graph.get(citiesArr[i]);
+      let neighbors = graph.getNeighbors(current),
+        hasNeighbor = false,
+        neighbor;
+      for (let neigh of neighbors) {
+        if (neigh.vertex.value === citiesArr[i + 1]) hasNeighbor = true;
+        neighbor = neigh;
+      }
+      if (hasCurrent && hasNeighbor) output.cost += neighbor.weight;
       }
     }
     catch (error) {
       return output = error;
     }
+    
   }
 
 
