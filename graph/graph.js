@@ -26,6 +26,24 @@ class Graph {
     return vertex;
   }
 
+  has(value) {
+    let vertices = this.adjacencyList.keys(),
+      found = false;
+    for (let vertex of vertices) {
+      if (vertex.value === value) return found = true;
+    }
+    return found;
+  }
+
+  get(value) {
+    let vertices = this.adjacencyList.keys(),
+      found = null;
+    for (let vertex of vertices) {
+      if (vertex.value === value) return found = vertex;
+    }
+    return found;
+  }
+
   addDirectedEdge(startVertex, endVertex, weight) {
     this.adjacencyList.get(startVertex).push(new Edge(endVertex, weight));
   }
