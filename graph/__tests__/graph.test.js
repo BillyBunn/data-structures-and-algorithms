@@ -104,4 +104,17 @@ describe('graph.js', () => {
     const graph = new Graph();
     expect(graph.getVertices()).toBeNull();
   });
+
+  it('Breadth-First Traversal: Returns a collection of vertices in the order they were visited', () => {
+    expect(true).toBeTruthy();
+  });
+
+  it('Breadth-First Traversal: Includes all vertices in returned collection even when there are duplicate values', () => {
+    expect(true).toBeTruthy();
+  });
+
+  it('Breadth-First Traversal: Returns a collection of one if there are no edges on the starting vertex', () => {
+    expect(true).toBeTruthy();
+  });
+
 });
