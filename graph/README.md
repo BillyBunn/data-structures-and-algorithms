@@ -4,7 +4,7 @@
 **[Wikipedia](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)):**
 > A Graph data structure consists of a finite (and possibly mutable) set of vertices or nodes or points, together with a set of unordered pairs of these vertices for an undirected Graph or a set of ordered pairs for a directed Graph. These pairs are known as edges, arcs, or lines for an undirected Graph and as arrows, directed edges, directed arcs, or directed lines for a directed Graph. The vertices may be part of the Graph structure, or may be external entities represented by integer indices or references
 
-## Challenge
+## Challenge 1
 #### Implement your own Graph. 
 The graph should be represented as an adjacency list, and should include the following methods:
 1. `AddNode()`
@@ -35,17 +35,55 @@ The graph should be represented as an adjacency list, and should include the fol
 7. A graph with only one node and edge can be properly returned
 8. An empty graph properly returns `null`
 
-## Approach & Efficiency
+### Approach & Efficiency
 I used ES6 class syntax to create my own `Graph` class. To make my implementation concise and understandable, I also created a `Vertex` and `Edge` class that the `Graph`'s methods could use. 
 
 The most important property in my `Graph` class is its `adjacencyList`, which is a new instance of a [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map), another new feature of ES6. `Map` prototype methods are used in the methods of my `Graph` class. 
 
 The `Graph` class also has a `_size` property, which indicates the number of vertices in its `adjacencyList`.
 
-## API
+### API
 * `addVertex(value)`
 * `addDirectedEdge(startVertex, endVertex, weight)`
 * `addUndirectedEdge(startVertex, endVertex, weight)`
 * `getVertices()`
 * `getNeighbors(vertex)`
 * `print()`
+
+## Challenge 2
+#### Breadth-First Traversal of a Graph
+Extend your graph object with a breadth-first traversal method that accepts a starting node. Without utilizing any of the built-in methods available to your language, return a collection of nodes in the order they were visited. Display the collection.
+
+### Approach & Efficiency
+Our approach for a breadth-first traversal was to utilize a queue data structure to keep track of our current vertex in the graph. We also used an array to keep track of the vertices that we'd already visited and serve as our output "collection". 
+
+As long as the queue isn't empty, we dequeue the front node, get its adjacency list, and examine all the vertices within (its neighbors). If we haven't yet visited a neighboring vertex in the list, we add it to the visited collection array and enqueue it to the queue.
+
+```
+breadthFirst(startingVertex) {
+    let collection = [];
+    collection.push(startingVertex);
+    let q = new Queue();
+    q.enqueue(startingVertex);
+
+    while (q.peek()) {
+      let current = q.dequeue();
+      let list = this.adjacencyList.get(current.value);
+
+      for (let vertex in list) {
+        if (!collection.includes(list[vertex])) {
+          collection.push(list[vertex]);
+          q.enqueue(list[vertex]);
+        }
+      }
+    }
+    return collection;
+  }
+```
+
+#### Efficiency
+**Time**: `O(n)`
+**Space**: `O(n)`
+
+### Solution
+![Whiteboard](https://i.imgur.com/gHyKsq7.jpg)
