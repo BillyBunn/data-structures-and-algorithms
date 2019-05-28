@@ -13,24 +13,27 @@
 
 ### Code Challenges
 
-#### <details><summary>Arrays</summary>
+<details>
+  <summary><b>Arrays</b></summary>
 
 - [arrayReverse](code-challenges/401/arrayReverse/)
 - [arrayShift](code-challenges/401/arrayShift/)
 - [arrayBinarySearch](code-challenges/401/arrayBinarySearch/)
 </details>
 
-#### Linked Lists
-
+<details>
+  <summary><b>Linked Lists</b></summary>
 - [llInsertions](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/linked-lists#code-challenge-class-06)
 - [llMerge](code-challenges/401/llMerge/)
 - [fifoAnimalShelter](code-challenges/401/fifoAnimalShelter)
 - [kthFromEnd](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/linked-lists#code-challenge-class-07)
+</details>
 
-#### Stacks and Queues
-
+<details>
+  <summary><b>Stacks and Queues</b></summary>
 - [queueWithStacks](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/code-challenges/401/queueWithStacks)
 - [multiBracketValidation](code-challenges/401/multiBracketValidation)
+</details>
 
 #### Hashtables
 
