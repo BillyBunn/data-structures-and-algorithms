@@ -2,6 +2,15 @@
 
 ## Table of Contents
 
+### Data Structures
+
+- [linked list](linked-lists/)
+- [stack](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/stacksAndQueues)
+- [queue](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/stacksAndQueues)
+- [tree](tree/)
+- [hashtable](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/hashtable)
+- [graph](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/graph)
+
 ### Code Challenges
 
 #### Arrays
@@ -11,12 +20,14 @@
 - [arrayBinarySearch](code-challenges/401/arrayBinarySearch/)
 
 #### Linked Lists
+
 - [llInsertions](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/linked-lists#code-challenge-class-06)
 - [llMerge](code-challenges/401/llMerge/)
 - [fifoAnimalShelter](code-challenges/401/fifoAnimalShelter)
 - [kthFromEnd](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/linked-lists#code-challenge-class-07)
 
 #### Stacks and Queues
+
 - [queueWithStacks](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/code-challenges/401/queueWithStacks)
 - [multiBracketValidation](code-challenges/401/multiBracketValidation)
 
@@ -43,15 +54,6 @@
 - [insertion-sort](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/sort)
 - [merge-sort](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/sort/merge-sort)
 - [quick-sort](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/sort/quick-sort)
-
-### Data Structures
-
-- [linked list](linked-lists/)
-- [stack](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/stacksAndQueues)
-- [queue](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/stacksAndQueues)
-- [tree](tree/)
-- [hashtable](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/hashtable)
-- [graph](https://github.com/BillyBunn/data-structures-and-algorithms/tree/master/graph)
 
 <!-- # New - Table of Contents
 ### Singly-Linked List
