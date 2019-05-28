@@ -13,11 +13,12 @@
 
 ### Code Challenges
 
-#### Arrays
+#### <details><summary>Arrays</summary>
 
 - [arrayReverse](code-challenges/401/arrayReverse/)
 - [arrayShift](code-challenges/401/arrayShift/)
 - [arrayBinarySearch](code-challenges/401/arrayBinarySearch/)
+</details>
 
 #### Linked Lists
 
